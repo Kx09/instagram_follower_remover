@@ -112,7 +112,7 @@ def remove_following(buts,driver,profiles_keep):
                     removes[i].click()
                     time.sleep(1)
                     clsname = convert_class_name("_a9-- _ap36 _a9-_")
-                    unfollow_button = driver.find_elements("class name",clsname)
+                    unfollow_button = driver.find_element("class name",clsname)
                     unfollow_button.click()
                     
                     del removes[i]
