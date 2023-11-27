@@ -101,8 +101,7 @@ def remove_following(buts,driver,profiles_keep):
             print(f"The number of following is {num_followers}")
 
             
-
-            
+ 
             for i in range(num_followers):
                 
                 print(followings[i].text,"at index position ",i)
@@ -117,7 +116,6 @@ def remove_following(buts,driver,profiles_keep):
                     unfollow_button = driver.find_element("class name",clsname)
                     unfollow_button.click()
                     
-                    del removes[i]
                     time.sleep(2)
 
                                         
@@ -141,9 +139,6 @@ def remove_followers(buts,driver,profiles_keep):
             name_removes = convert_class_name("x9f619 xjbqb8w x78zum5 x168nmei x13lgxp2 x5pf9jr xo71vjh x16n37ib x1uhb9sk x1plvlek xryxfnj x1c4vz4f xs83m0k x1q0g3np xqjyukv x1qjc9v5 x1oa3qoh x1nhvcw1")
             removes = driver.find_elements("class name",name_removes)
 
-    
-
-            print(removes)
 
             
             counter = 0
