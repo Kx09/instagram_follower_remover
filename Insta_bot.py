@@ -104,11 +104,13 @@ def remove_following(buts,driver,profiles_keep):
 
             
             for i in range(num_followers):
+                
+                print(followings[i].text,"at index position ",i)
                 if followings[i].text in profiles_keep:
-                        i = i + 1
-                        time.sleep(2)
+                        time.sleep(1)
                         continue
                 else:
+
                     removes[i].click()
                     time.sleep(1)
                     clsname = convert_class_name("_a9-- _ap36 _a9-_")
