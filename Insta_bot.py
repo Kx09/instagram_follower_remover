@@ -101,6 +101,8 @@ def remove_following(buts,driver,profiles_keep):
             print(f"The number of following is {num_followers}")
 
             
+
+            
             for i in range(num_followers):
                 if followings[i].text in profiles_keep:
                         i = i + 1
@@ -110,13 +112,16 @@ def remove_following(buts,driver,profiles_keep):
                     removes[i].click()
                     time.sleep(1)
                     clsname = convert_class_name("_a9-- _ap36 _a9-_")
-                    unfollow_button = driver.find_elements("class name","_a9-- _ap36 _a9-_")
+                    unfollow_button = driver.find_elements("class name",clsname)
+                    unfollow_button.click()
+                    
                     del removes[i]
                     time.sleep(2)
 
                                         
             cross = driver.find_element("class name","_abm0")
             cross.click()
+
                        
 
 
@@ -190,6 +195,9 @@ def main():
 
     profiles_keep = ["krem808s"]
     removeOuterloop(driver,profiles_keep)
+    print("The bot has been completed, profiles removed")
+    driver.quit()
+
 
 
 main()
