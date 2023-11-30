@@ -20,8 +20,12 @@ def OpenBrowser():#Opens browser(Firefox) and returns driver
 def enterPasword(driver,username,password):#enters given password
 
     # Find username and password fields and submit button
-    username_input = driver.find_element("name", "username")
-    password_input = driver.find_element("name","password")
+    if username == "" or password == "":
+        print("Username and/or Password not entered")
+        return 
+    else:
+        username_input = driver.find_element("name", "username")
+        password_input = driver.find_element("name", "password")
 
     login_button = driver.find_element("xpath","//button[@type='submit']")
 
@@ -184,13 +188,13 @@ def convert_class_name(string):
 
 def main():
     driver = OpenBrowser()
-    username = "maplechaipod"
-    password = "aoanazareen123"
+    username = ""#ADD USERNAME HERE
+    password = ""#ADD PASSWORD HERE
     enterPasword(driver,username,password)
 
 
 
-    profiles_keep = ["krem808s"]
+    profiles_keep = [""] #ADD PROFILES TO KEEP HERE
     removeOuterloop(driver,profiles_keep)
     print("The bot has been completed, profiles removed")
     driver.quit()
